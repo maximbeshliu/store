@@ -12,7 +12,7 @@ const renderOrders = (obj, arr) => {
   let shoppingList = document.createElement('ul');
   shoppingList.setAttribute('class', 'shopping-body');
   shoppingList.setAttribute('id', `${arr.length - 1}`);
-  shoppingList.innerHTML = `<li>${obj.idx}</li>
+  shoppingList.innerHTML = `<li class='index'>${obj.idx}</li>
   <li class="title">${obj.book}</li>
   <li>1</li>
   <li id="price">$${obj.price}</li>
@@ -45,6 +45,13 @@ const renderOrders = (obj, arr) => {
 
   removeBtn.addEventListener('click', removeBtnHandler);
 
+  shoppingCart.addEventListener('click', (e) => {
+    let liIndex = shoppingList.querySelector('.index');
+    if (e.target.className.includes('fa-trash-alt')) {
+      shoppingList.setAttribute('id', `${arr.length - 1}`);
+    }
+  });
+
   plusBtn.addEventListener('click', (e) => {
     let a = e.target.closest('ul').id;
     priceArr[a].push(Number(obj.price));
@@ -53,6 +60,7 @@ const renderOrders = (obj, arr) => {
     total.innerHTML = `Total: $${totalPrice(priceArr)}`;
     priceVal.innerHTML = `$${priceArr[a].reduce((prevVal, curVal) => Number(prevVal += curVal), 0)}`;
   });
+
   minusBtn.addEventListener('click', (e) => {
     let a = e.target.closest('ul').id;
     let priceVal = e.target.closest('ul').children[3];
@@ -70,6 +78,7 @@ const renderOrders = (obj, arr) => {
   });
 };
 
+
 function removeBtnHandler(e) {
   let target = e.target;
   let placeInArr = target.closest('ul').id;
@@ -81,6 +90,7 @@ function removeBtnHandler(e) {
     total.innerHTML = `Total: $${grandTotal - removePrice}`;
     target.closest('ul').remove();
     priceArr[placeInArr].splice(placeInPriceArr, 1);
+    priceArr[placeInArr] = [0];
     orderArr.splice(placeInArr, 1);
   }
 };
