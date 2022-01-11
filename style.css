@@ -1,0 +1,158 @@
+*,
+*::after,
+*::before,
+ul {
+  margin: 0;
+  padding: 0;
+  box-shadow: border-box;
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.book-list {
+  padding: 5px 25px;
+}
+
+.book-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.book-item .book-item-cover {
+  width: 120px;
+}
+.book-item .book-item-cover img {
+  width: 100%;
+}
+
+.book-item .book-item-info {
+  align-self: flex-start;
+  margin: 0px 0 0 15px;
+}
+
+.book-item-info .book-item-list li:not(:first-child) {
+  padding: 5px 0;
+}
+.book-item-list .book-item-list-btn {
+  color: #fff;
+  background-color: #17a2b8;
+  display: inline-block;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.book-item-list .book-item-list-btn:disabled{
+  cursor: not-allowed;
+  background-color: green;
+}
+
+.book-item-list .book-item-list-price {
+  font-size: 20px;
+  font-weight: 500;
+}
+.book-item-list .book-item-list-name a {
+  color: #007bff;
+  font-size: 19.2px;
+  text-decoration: none;
+}
+.book-item-list .book-item-list-name a:hover {
+  color: #007bff;
+  font-size: 19.2px;
+  text-decoration: underline;
+}
+
+/*Shoping Cart*/
+.shopping-cart-table {
+  width: 80%;
+  margin: auto;
+}
+
+.shopping-cart-table .total {
+  text-align: right;
+  margin-right: 150px;
+  margin-top: 50px;
+}
+
+.shopping-header,
+.shopping-body {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.shopping-header li,
+.shopping-body li {
+  width: 20%;
+}
+
+.shopping-header {
+  border-top: 2px solid #a2a2a2;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 5px 0;
+}
+
+.shopping-conatiner {
+  position: relative;
+}
+.shopping-body {
+  margin-top: 10px;
+}
+
+/*Buttons*/
+
+.shopping-body li:nth-child(5) {
+  display: flex;
+}
+
+.btn {
+  background: transparent;
+  outline: transparent;
+  border: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.btn-warning,
+.btn-success,
+.btn-danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-success {
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+.btn-success:hover {
+  color: #fff;
+  background: #28a745;
+}
+
+.btn-warning {
+  color: #ffc107;
+  border: 1px solid #ffc107;
+}
+.btn-warning:hover {
+  color: #fff;
+  background: #ffc107;
+}
+.btn-danger {
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+.btn-danger:hover {
+  color: #fff;
+  background: #dc3545;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="red" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Shoping list</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="book-list">
+        <div class="book-item">
+          <div class="book-item-cover">
+            <img
+              src="./images/41yJ75gpV-L._SX381_BO1,204,203,200_.jpg"
+              alt="image"
+            />
+          </div>
+          <div class="book-item-info">
+            <ul class="book-item-list">
+              <li class="book-item-list-name"><a href="#">Production-Ready Microservices</a></li>
+              <li class="book-item-list-author">Susan J. Fowler</li>
+              <li class="book-item-list-price">32</li>
+              <button class="book-item-list-btn">Add to cart</button>
+            </ul>
+          </div>
+        </div>
+        <div class="book-item">
+          <div class="book-item-cover">
+            <img
+              src="./images/414CRjLjwgL._SX403_BO1,204,203,200_.jpg"
+              alt="image"
+            />
+          </div>
+          <div class="book-item-info">
+            <ul class="book-item-list">
+              <li class="book-item-list-name"><a href="#">Release It!</a></li>
+              <li class="book-item-list-author">Michael T. Nygard</li>
+              <li class="book-item-list-price">45</li>
+              <button class="book-item-list-btn">Add to cart</button>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shopping-cart-table">
+      <h2>Your Order</h2>
+      <ul class="shopping-header">
+        <li>#</li>
+        <li>item</li>
+        <li>count</li>
+        <li>price</li>
+        <li>action</li>
+      </ul>
+      <div class="shopping-conatiner">
+        
+      </div>
+      <div class="total"></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
