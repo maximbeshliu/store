@@ -54,9 +54,10 @@ const renderOrders = (obj, arr) => {
     </button>
   </li>`;
   if (arr.length <= 2) {
-    shoppingCart.append(shoppingList);
     priceArr.push([Number(obj.price)]);
   }
+
+  shoppingCart.append(shoppingList);
 
   total.innerHTML = `Total: $${totalPrice(priceArr)}`;
 
