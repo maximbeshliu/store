@@ -7,6 +7,32 @@ const total = document.querySelector('.total');
 const orderArr = [];
 const priceArr = [];
 
+addToCartBtn.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    let parentEl = Array.from(e.target.closest('ul').children);
+    let bookNameText = parentEl.filter(el => el.className === 'book-item-list-name' ? el : null);
+    let priceText = parentEl.filter(el => el.className === 'book-item-list-price' ? el : null);
+    productObj = {
+      idx: orderArr.length + 1,
+      book: bookNameText[0].textContent,
+      price: priceText[0].textContent,
+    };
+    e.target.closest('button').disabled = true;
+    e.target.closest('button').innerHTML = '&#10004';
+    setTimeout(() => {
+      e.target.closest('button').disabled = false;
+      e.target.closest('button').innerHTML = 'Add to cart';
+    }, 5000);
+
+    let filteredOrders = orderArr.some(order => order.book === productObj.book);
+
+    if (!filteredOrders) {
+      orderArr.push(productObj);
+      renderOrders(productObj, orderArr);
+    }
+  });
+});
+
 
 const renderOrders = (obj, arr) => {
   let shoppingList = document.createElement('ul');
@@ -109,31 +135,7 @@ function totalPriceMinus(price, total) {
 }
 
 
-addToCartBtn.forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    let parentEl = Array.from(e.target.closest('ul').children);
-    let bookNameText = parentEl.filter(el => el.className === 'book-item-list-name' ? el : null);
-    let priceText = parentEl.filter(el => el.className === 'book-item-list-price' ? el : null);
-    productObj = {
-      idx: orderArr.length + 1,
-      book: bookNameText[0].textContent,
-      price: priceText[0].textContent,
-    };
-    e.target.closest('button').disabled = true;
-    e.target.closest('button').innerHTML = '&#10004';
-    setTimeout(() => {
-      e.target.closest('button').disabled = false;
-      e.target.closest('button').innerHTML = 'Add to cart';
-    }, 5000);
 
-    let filteredOrders = orderArr.some(order => order.book === productObj.book);
-
-    if (!filteredOrders) {
-      orderArr.push(productObj);
-      renderOrders(productObj, orderArr);
-    }
-  });
-});
 
 
 
